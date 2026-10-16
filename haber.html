@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haber – The Billy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="haberler.js"></script>
+<script src="haber.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+  <!-- ÜST MENÜ + ARAMA -->
+  <header class="topbar">
+    <a class="brand" href="index.html">the billy<span>.</span></a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="index.html">← Ana sayfa</a>
+      <a href="index.html">Gündem</a>
+      <a href="index.html">Dünya</a>
+      <a href="index.html">Ekonomi</a>
+      <a href="index.html">Teknoloji</a>
+      <a href="index.html">Spor</a>
+      <a href="index.html">Kültür</a>
+    </nav>
+    <form class="search" role="search" action="#">
+      <label for="ara" class="sr-only">Haberlerde ara</label>
+      <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="ara" type="search" placeholder="Haberlerde ara">
+    </form>
+  </header>
+
+  <!-- HABER (içeriği haber.js, haberler.js'ten doldurur) -->
+  <main class="story">
+    <header class="story__head">
+      <span class="tag" id="h-kategori"></span>
+      <h1 id="h-baslik"></h1>
+      <p class="story__summary" id="h-ozet"></p>
+      <div class="story__meta">
+        <span id="h-yazar"></span>
+        <span id="h-tarih"></span>
+        <span id="h-sure"></span>
+      </div>
+    </header>
+
+    <figure class="story__hero">
+      <div class="story__image" id="h-gorsel">
+        <span class="lead__image-label">Haber görseli</span>
+      </div>
+      <figcaption id="h-gorsel-aciklama"></figcaption>
+    </figure>
+
+    <div class="story__layout">
+      <article class="story__body" id="h-metin"></article>
+      <aside class="story__more" aria-label="Diğer haberler">
+        <h2>Diğer haberler</h2>
+        <div id="h-diger"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- DEVASA YAZI -->
+  <div class="wordmark">
+    <a href="index.html" aria-label="the billy">the billy<span>.</span></a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__info">
+      <nav class="footer__nav" aria-label="Alt menü">
+        <a href="index.html">Hakkımızda</a>
+        <a href="index.html">Künye</a>
+        <a href="index.html">İletişim</a>
+        <a href="index.html">Reklam</a>
+        <a href="index.html">Gizlilik</a>
+      </nav>
+      <span class="footer__copy">© 2026 The Billy</span>
+    </div>
+    <div class="barcode">
+      <img src="barcode.png" alt="The Billy barkodu">
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

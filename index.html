@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Billy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap">
+</head>
+<body>
+<div class="page">
+
+  <!-- ÜST MENÜ: logo | menü | arama -->
+  <header class="topbar">
+    <img style="width: 159px;" src="images/the-billy.png" alt="image description">
+    <nav class="nav" aria-label="Ana menü">
+      <a href="#haberler">Gündem</a>
+      <a href="#haberler">Dünya</a>
+      <a href="#haberler">Ekonomi</a>
+      <a href="#haberler">Teknoloji</a>
+      <a href="#haberler">Spor</a>
+      <a href="#haberler">Kültür</a>
+    </nav>
+    <form class="search" role="search" action="#">
+      <label for="ara" class="sr-only">Haberlerde ara</label>
+      <svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="ara" type="search" placeholder="Haberlerde ara">
+    </form>
+  </header>
+
+  <main>
+    <!-- BÜYÜK MANŞET YAZISI: 5 saniyede bir alttaki sıradaki haberin başlığına döner (script.js) -->
+    <h1 style="margin-bottom: -115px;" class="statement" aria-live="polite"><a href="haber.html?id=haber-1">[1. haber başlığı buraya gelecek, kısa ve net]</a></h1>
+
+    <!-- HABER KARTLARI: yatay kaydırılır. Yeni kart eklemek için bir <article> bloğunu kopyala. -->
+    <!-- data-image="foto.jpg" yazarsan kartın fotoğrafı olur. -->
+    <section class="more" id="haberler" aria-label="Haberler">
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[Gündem]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-1">[onun haberi]</a></h2>
+          <p class="item__desc">[haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-1">Haberi oku</a>
+        </div>
+      </article>
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[Spor]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-2">[bunun haberi]</a></h2>
+          <p class="item__desc">[ haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-2">Haberi oku</a>
+        </div>
+      </article>
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-3">[şunun haberi]</a></h2>
+          <p class="item__desc">[3. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-3">Haberi oku</a>
+        </div>
+      </article>
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-4">[benim haberim]</a></h2>
+          <p class="item__desc">[4. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-4">Haberi oku</a>
+        </div>
+      </article>
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-5">[palaskan nerde lan senin]</a></h2>
+          <p class="item__desc">[5. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-5">Haberi oku</a>
+        </div>
+      </article>
+
+      <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-6">[yaa bu dünya böyle işte]</a></h2>
+          <p class="item__desc">[6. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-6">Haberi oku</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- DEVASA YAZI -->
+  <div class="wordmark">
+    <a style="font-family: 'Boldonse', sans-serif; font-size: 6vw;" href="index.html" aria-label="the billy"><b style="font-size: 295px; padding: 0em; margin: 1px; margin-top: 180px; margin-left: 294px; width: 0px; opacity: 1; border-style: double; border-width: 0px; border-radius: 0px; height: 0px; margin-bottom: 0px; margin-right: 232px; padding-bottom: 0em; padding-left: 0em; padding-top: 0em; padding-right: 0em; position: relative; top: 52px; outline-style: solid; outline-width: 403px; outline-offset: -2px;">the bılly</b></a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__info">
+      <nav class="footer__nav" aria-label="Alt menü">
+        <a href="#haberler">Hakkımızda</a>
+        <a href="#haberler">Künye</a>
+        <a href="#haberler">İletişim</a>
+        <a href="#haberler">Reklam</a>
+        <a href="#haberler">Gizlilik</a>
+      </nav>
+      <span class="footer__copy">© 2026 The Billy</span>
+    </div>
+    <div class="barcode">
+      <img src="images/the-dollar-billy.png" alt="The Billy barkodu">
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
