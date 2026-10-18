@@ -98,13 +98,13 @@ a:hover { text-decoration: underline; }
 
 /* ===== BÜYÜK MANŞET YAZISI ===== */
 .statement {
-  margin: 28px 40px 0;
+  margin: 28px 300px 0;
   min-height: 2.94em;                /* 3 satır yer ayırır, geçişte sayfa zıplamaz */
   font-family: var(--font-impact);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 5.6vw;
-  line-height: 0.98;
+  font-size: 4.1vw;
+  line-height: 1.2;
   letter-spacing: 0;
   transition: opacity 0.3s ease;     /* script.js'teki FADE ile aynı */
 }
@@ -124,21 +124,41 @@ a:hover { text-decoration: underline; }
   scrollbar-width: thin;
 }
 
+/* 1. Karta ve fotoğrafa yumuşak geçiş (transition) veriyoruz */
 .item {
-  flex: 0 0 330px;                  /* kart genişliği */
+  flex: 0 0 330px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   scroll-snap-align: start;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* yumuşak geçiş */
 }
 
 .item__photo {
   flex: none;
   width: 100%;
-  height: 210px;                    /* fotoğraf yüksekliği */
+  height: 210px;
   background: var(--photo);
   background-size: cover;
   background-position: center;
+  overflow: hidden; /* Büyüyen resim kenarlardan taşmasın */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), height 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 2. ZURNAYI ZORTLATAN KISIM: Manşette olan aktif haberin resmi */
+.item.is-active .item__photo {
+  transform: scale(1.08); /* Resmi %8 oranında pürüzsüzce büyütür */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18); /* Hafif gölgeyle öne fırlar */
+}
+
+/* Aktif olmayan diğer kartları bir tık hafifletip aktifi parlatmak istersen (opsiyonel ama çok şık durur): */
+.more:hover .item:not(:hover),
+.item:not(.is-active) {
+  opacity: 0.75;
+}
+
+.item.is-active {
+  opacity: 1;
 }
 
 .item__body {
@@ -154,8 +174,8 @@ a:hover { text-decoration: underline; }
   font-family: var(--font-impact);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 28px;
-  line-height: 1;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .item__title a:hover { text-decoration: none; }
@@ -278,10 +298,10 @@ a:hover { text-decoration: underline; }
 }
 
 .story__head {
-  max-width: 980px;
+  max-width: 930px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .story__head h1 {
@@ -290,7 +310,7 @@ a:hover { text-decoration: underline; }
   font-weight: 400;
   text-transform: uppercase;
   font-size: 72px;
-  line-height: 1;
+  line-height: 1.38;
 }
 
 .story__summary {
@@ -338,11 +358,16 @@ a:hover { text-decoration: underline; }
   margin-top: 48px;
   display: flex;
   align-items: flex-start;
-  gap: 72px;
+  justify-content: center; /* İki sütunu sayfanın tam ortasına kilitler */
+  gap: 56px;                /* Haber ile Diğer Haberler arasındaki şık boşluk */
+  max-width: 1160px;        /* 760px metin + 340px yan sütun + boşluk toplamı */
+  margin-left: auto;        /* Bloğu yatayda ortalar */
+  margin-right: auto;       /* Bloğu yatayda ortalar */
+  width: 100%;
 }
 
 .story__body {
-  flex: 1 1 0;
+  flex: 1 1 760px;
   min-width: 0;
   max-width: 760px;
 }
@@ -418,12 +443,25 @@ a:hover { text-decoration: underline; }
   .nav { justify-content: flex-start; flex-wrap: wrap; gap: 6px 20px; }
   .search { width: 100%; justify-self: stretch; }
 
-  .statement { margin: 20px 20px 0; font-size: 10vw; }
+  /* MANŞET: Yüksekliği serbest bırakıyoruz ve alt boşluk veriyoruz */
+  .statement { 
+    margin: 20px 20px 0; 
+    font-size: 10vw; 
+    min-height: auto;      /* Başlık kaç satır olursa olsun kendi yüksekliğini alsın */
+    margin-bottom: 24px;   /* Kartlarla arasına temiz bir mesafe koysun */
+  }
 
-  .more { margin: 20px 0 0 20px; padding-right: 20px; }
+  /* HABER KARTLARI */
+  .more { 
+    margin: 0 0 0 20px;    /* Üstten eksi çekmeyi sıfırladık */
+    padding-right: 20px; 
+  }
+  
   .item { flex-basis: 240px; }
   .item__photo { height: 160px; }
 
+  /* ... geri kalan kurallar aynı kalabilir ... */
+}
   .wordmark { margin-top: 24px; }
 
   .footer { flex: 0 0 auto; padding: 24px 20px; flex-direction: column; align-items: flex-start; }
@@ -435,4 +473,4 @@ a:hover { text-decoration: underline; }
   .story__image { height: 240px; }
   .story__layout { flex-direction: column; gap: 40px; margin-top: 32px; }
   .story__more { flex: 0 0 auto; width: 100%; }
-}
+
