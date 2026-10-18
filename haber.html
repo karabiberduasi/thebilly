@@ -10,13 +10,14 @@
 <link rel="stylesheet" href="style.css">
 <script src="haberler.js"></script>
 <script src="haber.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap">
 </head>
 <body>
 <div class="page">
 
   <!-- ÜST MENÜ + ARAMA -->
   <header class="topbar">
-    <a class="brand" href="index.html">the billy<span>.</span></a>
+    <img style="width: 159px;" src="images/the-billy.png" alt="image description">
     <nav class="nav" aria-label="Ana menü">
       <a href="index.html">← Ana sayfa</a>
       <a href="index.html">Gündem</a>
@@ -37,7 +38,7 @@
   <main class="story">
     <header class="story__head">
       <span class="tag" id="h-kategori"></span>
-      <h1 id="h-baslik"></h1>
+      <h1 style="padding: 0px;" id="h-baslik"></h1>
       <p class="story__summary" id="h-ozet"></p>
       <div class="story__meta">
         <span id="h-yazar"></span>
@@ -55,7 +56,7 @@
 
     <div class="story__layout">
       <article class="story__body" id="h-metin"></article>
-      <aside class="story__more" aria-label="Diğer haberler">
+      <aside style="width: 342px; padding-top: 15px; margin: 0px; height: 739px; display: block;" class="story__more" aria-label="Diğer haberler">
         <h2>Diğer haberler</h2>
         <div id="h-diger"></div>
       </aside>
@@ -64,7 +65,7 @@
 
   <!-- DEVASA YAZI -->
   <div class="wordmark">
-    <a href="index.html" aria-label="the billy">the billy<span>.</span></a>
+    <a style="font-family: 'Boldonse', sans-serif;" href="index.html" aria-label="the billy">the billy</a>
   </div>
 
   <!-- FOOTER -->
@@ -79,9 +80,7 @@
       </nav>
       <span class="footer__copy">© 2026 The Billy</span>
     </div>
-    <div class="barcode">
-      <img src="barcode.png" alt="The Billy barkodu">
-    </div>
+    <img style="width: 211px;" src="images/bo-dollar.png" alt="image description">
   </footer>
 
 </div>
