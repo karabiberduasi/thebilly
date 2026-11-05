@@ -17,15 +17,14 @@
 
   <!-- ÜST MENÜ + ARAMA -->
   <header class="topbar">
-    <img style="width: 159px;" src="images/the-billy.png" alt="image description">
+        <a class="logo-link" href="index.html">
+  <img style="width: 159px;" src="images/the-billy.png" alt="The Billy">
+</a>
     <nav class="nav" aria-label="Ana menü">
-      <a href="index.html">← Ana sayfa</a>
-      <a href="index.html">Gündem</a>
-      <a href="index.html">Dünya</a>
-      <a href="index.html">Ekonomi</a>
-      <a href="index.html">Teknoloji</a>
-      <a href="index.html">Spor</a>
-      <a href="index.html">Kültür</a>
+      <a href="index.html" aria-current="page">Haber</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="video.html">Video Haber</a>
+      <a href="fotograf.html">Fotoğraf</a>
     </nav>
     <form class="search" role="search" action="#">
       <label for="ara" class="sr-only">Haberlerde ara</label>
@@ -55,17 +54,24 @@
     </figure>
 
     <div class="story__layout">
-      <article class="story__body" id="h-metin"></article>
-      <aside style="width: 342px; padding-top: 15px; margin: 0px; height: 739px; display: block;" class="story__more" aria-label="Diğer haberler">
-        <h2>Diğer haberler</h2>
-        <div id="h-diger"></div>
-      </aside>
+  <article class="story__body" id="h-metin"></article>
+  
+  <aside class="story__more" aria-label="Diğer haberler">
+    <!-- GALERİ KUTUSU (Diğer Haberler'in Hemen Üstünde) -->
+    <div id="h-galeri-wrapper" style="display: none; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line);">
+      <h2 style="font-family: var(--font-impact); font-size: 24px; margin-bottom: 12px; text-transform: uppercase;">Foto Galeri</h2>
+      <div id="h-galeri" class="story-gallery"></div>
     </div>
+
+    <h2>Diğer haberler</h2>
+    <div id="h-diger"></div>
+  </aside>
+</div>
   </main>
 
   <!-- DEVASA YAZI -->
   <div class="wordmark">
-    <a style="font-family: 'Boldonse', sans-serif;" href="index.html" aria-label="the billy">the billy</a>
+    <a lang="en" style="font-family: 'Boldonse', sans-serif;" href="index.html" aria-label="the billy">the billy</a>
   </div>
 
   <!-- FOOTER -->

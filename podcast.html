@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podcast – The Billy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="icerik.js"></script>
+<script src="liste.js" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap">
+</head>
+<body>
+<div class="page">
+
+  <!-- ÜST MENÜ -->
+  <header class="topbar">
+    <a class="logo-link" href="index.html"><img style="width: 159px;" src="images/the-billy.png" alt="The Billy"></a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="index.html">Haber</a>
+      <a href="podcast.html" aria-current="page">Podcast</a>
+      
+      <a href="video.html">Video Haber</a>
+      <a href="fotograf.html">Fotoğraf</a>
+    </nav>
+    <form class="search" role="search" action="#">
+      <label for="ara" class="sr-only">Podcastlerde ara</label>
+      <svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="ara" type="search" placeholder="Podcastlerde ara">
+    </form>
+  </header>
+
+  <main>
+    <header class="section-head">
+      <h1 class="section-title">Podcast</h1>
+      <p class="section-sub">[Podcast sayfası için kısa tanıtım yazısı buraya gelecek.]</p>
+    </header>
+
+    <!-- BÖLÜMLER: liste.js, icerik.js'teki PODCASTLER listesinden doldurur -->
+    <section class="pod-list" id="icerik" data-sayfa="podcast" aria-label="Podcast bölümleri"></section>
+  </main>
+
+  <!-- DEVASA YAZI -->
+  <div class="wordmark">
+    <a lang="en" style="font-family: 'Boldonse', sans-serif;" href="index.html" aria-label="the billy">the billy</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__info">
+      <nav class="footer__nav" aria-label="Alt menü">
+        <a href="index.html">Hakkımızda</a>
+        <a href="index.html">Künye</a>
+        <a href="index.html">İletişim</a>
+      </nav>
+      <span class="footer__copy">© 2026 The Billy</span>
+    </div>
+    <img style="width: 211px;" src="images/bo-dollar.png" alt="The Billy">
+  </footer>
+
+</div>
+</body>
+</html>

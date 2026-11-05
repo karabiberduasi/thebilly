@@ -12,20 +12,22 @@
 <script src="haberler.js"></script>
 <script src="script.js" defer></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap">
+  <link rel="icon" type="image/png" href="images/billyboiredd.png">
 </head>
 <body>
 <div class="page">
 
   <!-- ÜST MENÜ: logo | menü | arama -->
   <header class="topbar">
-    <img style="width: 159px;" src="images/the-billy.png" alt="image description">
+    <a class="logo-link" href="index.html">
+  <img style="width: 159px;" src="images/the-billy.png" alt="The Billy">
+</a>
     <nav class="nav" aria-label="Ana menü">
-      <a href="#haberler">Gündem</a>
-      <a href="#haberler">Dünya</a>
-      <a href="#haberler">Ekonomi</a>
-      <a href="#haberler">Teknoloji</a>
-      <a href="#haberler">Spor</a>
-      <a href="#haberler">Kültür</a>
+      <a href="index.html" aria-current="page">Haber</a>
+      <a href="podcast.html">Podcast</a>
+      
+      <a href="video.html">Video Haber</a>
+      <a href="fotograf.html">Fotoğraf</a>
     </nav>
     <form class="search" role="search" action="#">
       <label for="ara" class="sr-only">Haberlerde ara</label>
@@ -35,9 +37,13 @@
   </header>
 
   <main>
-    <!-- BÜYÜK MANŞET YAZISI: 5 saniyede bir alttaki sıradaki haberin başlığına döner (script.js) -->
-    <h1 style="padding: 0px; width: 778px; margin: 0px; margin-left: 9px; margin-right: 9px;" class="statement" aria-live="polite"><a href="haber.html?id=haber-1">[1. haber başlığı buraya gelecek, kısa ve net]</a></h1>
 
+<div class="statement-wrapper">
+  <div class="statement-bg" id="statement-bg"></div>
+  <h1 style="padding: 0px; width: 778px; margin: 0px; margin-left: 9px; margin-right: 9px;" class="statement" aria-live="polite">
+    <a href="haber.html?id=haber-1">[1. haber başlığı buraya gelecek, kısa ve net]</a>
+  </h1>
+</div>
     <!-- HABER KARTLARI: yatay kaydırılır. Yeni kart eklemek için bir <article> bloğunu kopyala. -->
     <!-- data-image="foto.jpg" yazarsan kartın fotoğrafı olur. -->
     <section class="more" id="haberler" aria-label="Haberler">
@@ -101,6 +107,26 @@
           <a class="item__link" href="haber.html?id=haber-6">Haberi oku</a>
         </div>
       </article>
+      
+       <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-6">[yaa bu dünya böyle işte]</a></h2>
+          <p class="item__desc">[7. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-6">Haberi oku</a>
+        </div>
+      </article>
+      
+            <article class="item" data-image="">
+        <div class="item__photo"></div>
+        <div class="item__body">
+          <span class="tag tag--small">[KATEGORİ]</span>
+          <h2 class="item__title"><a href="haber.html?id=haber-6">[yaa bu dünya böyle işte]</a></h2>
+          <p class="item__desc">[7. haberin kısa özeti buraya gelecek, en fazla iki satır.]</p>
+          <a class="item__link" href="haber.html?id=haber-6">Haberi oku</a>
+        </div>
+      </article>
 
     </section>
   </main>
@@ -112,19 +138,15 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-   
     <div class="footer__info">
       <nav class="footer__nav" aria-label="Alt menü">
         <a href="#haberler">Hakkımızda</a>
         <a href="#haberler">Künye</a>
         <a href="#haberler">İletişim</a>
-       <img style="width: 211px; margin: 0px; padding: 0px; margin-left: 1227px;" src="images/bo-dollar.png" alt="image description">
-        
-      
-      
       </nav>
       <span class="footer__copy">© 2026 The Billy</span>
     </div>
+    <img style="width: 211px;" src="images/bo-dollar.png" alt="The Billy">
   </footer>
 
 </div>

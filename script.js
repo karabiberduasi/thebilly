@@ -2,43 +2,54 @@
 document.addEventListener('DOMContentLoaded', function () {
   var INTERVAL = 5000; // 5 saniye
   var FADE = 300;
-// --- MOUSE WHEEL (SCROLL) İLE YATAY KAYDIRMA ---
+
+  var statement = document.querySelector('.statement');
+  var statementLink = statement ? statement.querySelector('a') : null;
+  var statementBg = document.getElementById('statement-bg');
+  var more = document.querySelector('.more');
+
+ // --- MOUSE WHEEL İLE YAĞ GİBİ SMOOTH YATAY KAYDIRMA ---
   if (more) {
+    var targetScroll = more.scrollLeft;
+    var currentScroll = more.scrollLeft;
+    var isAnimating = false;
+
+    function smoothScrollLoop() {
+      // Mevcut pozisyon ile hedef pozisyon arasındaki mesafeyi yumuşakça kapat (0.1 yumuşaklık katsayısı)
+      currentScroll += (targetScroll - currentScroll) * 0.1;
+      more.scrollLeft = currentScroll;
+
+      // Hedefe çok yaklaştıysa animasyonu durdur
+      if (Math.abs(targetScroll - currentScroll) > 0.5) {
+        requestAnimationFrame(smoothScrollLoop);
+      } else {
+        more.scrollLeft = targetScroll;
+        isAnimating = false;
+      }
+    }
+
     more.addEventListener('wheel', function (e) {
       if (e.deltaY !== 0) {
-        e.preventDefault(); // Sayfanın aşağı kaymasını engelle
-        more.scrollLeft += e.deltaY * 1.5; // Yatay olarak yumuşak kaydır
+        e.preventDefault();
+
+        var maxScroll = more.scrollWidth - more.clientWidth;
+        // İvme katsayısı (e.deltaY * 2.2)
+        targetScroll = Math.max(0, Math.min(maxScroll, targetScroll + e.deltaY * 2.2));
+
+        if (!isAnimating) {
+          isAnimating = true;
+          requestAnimationFrame(smoothScrollLoop);
+        }
       }
     }, { passive: false });
   }
-
-  // --- SAĞ-SOL OK BUTONLARI İLE KAYDIRMA ---
-  var btnPrev = document.querySelector('.more-nav--prev');
-  var btnNext = document.querySelector('.more-nav--next');
-  var SCROLL_AMOUNT = 350; // Tek tıklamada bir kart boyu kaydır
-
-  if (btnPrev && more) {
-    btnPrev.addEventListener('click', function () {
-      more.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
-    });
-  }
-
-  if (btnNext && more) {
-    btnNext.addEventListener('click', function () {
-      more.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
-    });
-  }
-  var statement = document.querySelector('.statement');
-  var statementLink = statement ? statement.querySelector('a') : null;
-  var more = document.querySelector('.more');
-
-  // haberler.js yüklü mü kontrol et
+  // haberler.js kontrolü
   if (typeof HABERLER === 'undefined' || !HABERLER.length) {
-    console.error("HABERLER değişkeni bulunamadı. haberler.js dosyasının index.html'e eklendiğinden emin olun.");
+    console.error("HABERLER değişkeni bulunamadı. haberler.js yüklenemedi.");
     return;
   }
 
-  // 1. Kartları haberler.js'ten gelen verilerle doldur
+  // 1. Kartları doldur
   var listeHaberleri = HABERLER.filter(function (h) { return h.id !== 'manset'; });
   var kartlar = Array.prototype.slice.call(document.querySelectorAll('.more .item'));
 
@@ -68,18 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 2. Slayt / Döngü için hikayeleri hazırla
+  // 2. Slayt Hazırlığı
   var activeItems = kartlar.filter(function (k) { return k.style.display !== 'none'; });
-  if (!activeItems.length || !statementLink) {
-    console.warn("Manşet linki veya aktif kart bulunamadı.");
-    return;
-  }
+  if (!activeItems.length || !statementLink) return;
 
-  var stories = activeItems.map(function (item) {
+  var stories = activeItems.map(function (item, index) {
+    var haber = listeHaberleri[index];
     var link = item.querySelector('.item__title a');
     return {
       title: link ? link.textContent : '',
       href: link ? link.getAttribute('href') : '#',
+      gorsel: haber ? haber.gorsel : '',
       item: item
     };
   });
@@ -87,46 +97,102 @@ document.addEventListener('DOMContentLoaded', function () {
   var current = 0;
   var paused = false;
 
+  var recentIndexes = [];
+  var MAX_HISTORY = Math.min(8, stories.length - 1);
+
   function fill(story) {
     if (!story) return;
+
     statementLink.textContent = story.title;
     statementLink.setAttribute('href', story.href);
+
+    if (statementBg) {
+      if (story.gorsel) {
+        statementBg.style.backgroundImage = 'url("' + story.gorsel + '")';
+      } else {
+        statementBg.style.backgroundImage = '';
+      }
+    }
+
+    var len = story.title.length;
+    if (len > 90) {
+      statement.style.fontSize = '2.2vw';
+    } else if (len > 60) {
+      statement.style.fontSize = '3vw';
+    } else {
+      statement.style.fontSize = '';
+    }
 
     activeItems.forEach(function (item) {
       item.classList.toggle('is-active', item === story.item);
     });
 
-    if (more) {
+    if (more && !paused) {
       var left = story.item.offsetLeft - more.offsetLeft;
-      var right = left + story.item.offsetWidth;
-      if (left < more.scrollLeft || right > more.scrollLeft + more.clientWidth) {
-        more.scrollTo({ left: left, behavior: 'smooth' });
-      }
+      more.scrollTo({ left: left, behavior: 'smooth' });
     }
   }
 
-  function show(index) {
+  function show(index, instant) {
     current = index;
-    statement.classList.add('is-fading');
-    setTimeout(function () {
+    
+    if (recentIndexes.indexOf(index) === -1) {
+      recentIndexes.push(index);
+      if (recentIndexes.length > MAX_HISTORY) {
+        recentIndexes.shift();
+      }
+    }
+
+    // Hover yaparken anında değiştir (instant), otomatik döngüde fade efekti ver
+    if (instant) {
       fill(stories[current]);
-      statement.classList.remove('is-fading');
-    }, FADE);
+    } else {
+      if (statement) statement.classList.add('is-fading');
+      setTimeout(function () {
+        fill(stories[current]);
+        if (statement) statement.classList.remove('is-fading');
+      }, FADE);
+    }
   }
 
-  // İlk haberi hemen yazdır
-  fill(stories[0]);
+  // --- KARTLARIN ÜSTÜNE GELİNCE MANŞETTE GÖSTERME (HOVER) ---
+  stories.forEach(function (story, index) {
+    story.item.addEventListener('mouseenter', function () {
+      paused = true;
+      show(index, true); // Anında manşeti değiştir
+    });
 
-  // 5 saniyede bir sonrakine geç
+    story.item.addEventListener('mouseleave', function () {
+      paused = false;
+    });
+  });
+
+  // İlk açılış
+  show(0, true);
+
+  // 5 saniyede bir otomatik döngü
   setInterval(function () {
     if (paused) return;
-    show((current + 1) % stories.length);
+
+    var availableIndexes = [];
+    for (var i = 0; i < stories.length; i++) {
+      if (recentIndexes.indexOf(i) === -1) {
+        availableIndexes.push(i);
+      }
+    }
+
+    if (availableIndexes.length === 0) {
+      availableIndexes = [(current + 1) % stories.length];
+    }
+
+    var randomIndex = availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+    show(randomIndex, false);
+
   }, INTERVAL);
 
-  if (statement && more) {
-    [statement, more].forEach(function (el) {
-      el.addEventListener('mouseenter', function () { paused = true; });
-      el.addEventListener('mouseleave', function () { paused = false; });
-    });
+  // Manşet alanının üstüne gelince de otomatik kaymayı duraklat
+  if (statement) {
+    statement.addEventListener('mouseenter', function () { paused = true; });
+    statement.addEventListener('mouseleave', function () { paused = false; });
   }
 });

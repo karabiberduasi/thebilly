@@ -166,4 +166,48 @@ var HABERLER = [
       "Engelli öğrencilerin eğitim hakkından eşit biçimde yararlanabilmesi, sunulan desteklerin bireysel ihtiyaçlara ne ölçüde yanıt verdiğiyle yakından ilişkili. Anadolu Üniversitesi’nde yürütülen çalışmaların değerlendirilmesi, eğitimde fırsat eşitliğinin güçlendirilmesi ve erişilebilirliğin geliştirilmesi açısından önem taşıyor."
     ]
   },
+{
+    id: "spor-medyasinda-altin-jenerasyon",
+    kategori: "SPOR",
+    baslik: "Spor Medyasına Altın Bir Jenerasyon Geliyor",
+    ozet: "Geleneksel medyanın paslanmış kalıplarını yıkmayı hedefleyen 'Altın Jenerasyon', yenilikçi ve analitik yayıncılık anlayışıyla dijital spor medyasında dev bir topluluk inşa ediyor.",
+    yazar: "Atahan Cavcar",
+    tarih: "6 Kasım 2026",
+    sure: "4 dk okuma",
+    gorsel: "images/ajaja.png",
+    gorselAciklama: "",
+    metin: [
+      "Spor dünyasının nabzını tutan medya sektörü, son yıllarda dijitalleşmenin etkisiyle büyük bir dönüşüm geçiriyor. Bu dönüşümün en güçlü temsilcilerinden biri olarak sahneye çıkan \"Altın Jenerasyon\", spor haberciliğine yepyeni bir soluk getirdi. Sporun sadece maç skorlarından ve sahada alınan sonuçlardan ibaret olmadığını savunan tutkulu bir grup sporsever, 2024 yılının Haziran ayında bu yenilikçi platformun temellerini attı. Geleneksel medyanın paslanmış kalıplarını yıkmayı ve herkesin diline pelesenk olmuş tekdüze \"kurumsallık\" yapısının dışına çıkmayı hedefleyen ekip, yeni nesil bir spor dili oluşturmak amacıyla yayın hayatına başladı. Cesurca atılan bu ilk adım, aradan geçen kısa süreye rağmen bugün milyonlarca sporsevere dokunan devasa ve interaktif bir topluluğun doğmasına zemin hazırladı.",
+      "Platformun temelinde, spora duyulan derin tutkuyu dijital çağın sunduğu sınırsız dinamiklerle harmanlamak yatıyor. Geleneksel ve monoton spor haberciliğinin ötesine geçmeyi amaçlayan Altın Jenerasyon, takipçilerine yüzeysel veriler sunmakla yetinmiyor. Bunun yerine, sporun perde arkasındaki görünmeyen dinamiklerini gün yüzüne çıkaran derinlemesine analizlerle \"Analitik Yaklaşım\" ilkesini benimsiyor. Klasik spor medyasının tekdüzeliğinden sıkılan okuyucular için interaktif ve dinamik içerikler üreterek \"Yeni Nesil Medya\" kavramının altını dolduruyor. Ayrıca, yayıncılıkta sıkça eleştirilen soğuk ve \"statik tarafsızlık\" kalkanının arkasına sığınmak yerine, her takımın ve rengin heyecanına samimiyetle ortak olabilen adil bir \"Objektif Bakış\"açısı sunuyorlar.",
+      "Kısa sürede yakalanan büyük ivme, planlı ve istikrarlı bir büyüme stratejisinin sonucu olarak karşımıza çıkıyor. 2024 yılında sosyal medya mecralarında ilk içeriklerini paylaşarak dijital dünyaya merhaba diyen platform, takipçilerinden aldığı güçle hızla büyüdü. 2025 yılına gelindiğinde ise sıradan haber paylaşımlarının çok ötesine geçerek, ilk geniş kapsamlı analiz serilerini ve dikkat çekici özel grafik tasarımlarını yayınlamaya başladılar. Bu hamle, takipçi kitlesinin çığ gibi büyümesini sağladı. 2026 yılında ise vizyonlarını daha da genişleterek sadece futbolla sınırlı kalmadılar; basketbol, voleybol ve Formula 1 (F1) gibi farklı spor dallarına odaklanan özel alt departmanları hayata geçirmek için dev adımlar attılar.",
+      "Rakamlar da Altın Jenerasyonun bu önlenemez yükselişini net bir şekilde doğruluyor. Instagram üzerinde 100 bini aşkın kemikleşmiş takipçiye ulaşan platformun hedef kitlesinin %75.1'ini Türkiye'deki sporseverler oluşturuyor. Genç ve dinamik bir kitleye hitap eden hesabın takipçilerinin %33.6'sı 25-34 yaş aralığında, %23.4'ü ise 18-24 yaş aralığında bulunuyor. Son bir yılın verilerine bakıldığında, platform aylık ortalama 73.8 milyon görüntülenme gibi muazzam bir istatistik yakalamış durumda. Bir yıl içinde ulaştıkları toplam görüntülenme sayısı 886.3 milyonu bulurken, paylaştıkları gönderi, reels ve hikayelerle toplamda 62.5 milyon farklı hesaba erişim sağlamayı başardılar. Platform, içeriklerini %70 oranında gönderi, %20 oranında reels ve %5 oranında hikaye formatında dengeli bir şekilde takipçilerine sunuyor.",
+      "Başladığı günden bu yana Türkiye'nin en çok etkileşim alan spor platformlarından biri unvanını kazanan Altın Jenerasyon, gözünü geleceğe dikmiş durumda. Kısa vadeli başarılarla yetinmeyen ekibin uzun vadedeki en büyük hedefi, sadece üretilen içeriği pasif bir şekilde tüketen değil, aynı zamanda interaktif yollarla içeriğe yön verebilen organik bir \"Altın Jenerasyon\" topluluğu inşa etmek. Görsel ve yazılı içeriklerin ötesinde bir \"Multimedya Genişlemesi\" planlayan platform; podcast yayınları, canlı yayın programları ve özel video serileriyle sporun her alanında 360 derece yayıncılık yapmaya hazırlanıyor. Tüm bu yenilikçi adımlarla birlikte nihai amaçları, spor dünyasındaki son dakika haberleri, derinlikli analizler ve özel içerikler arandığında herkesin aklına gelen ilk referans noktası olmak."
+    ]
+  },
+  {
+    id: "engelli-bireylerin-sorunlari-gundemde",
+    kategori: "TOPLUM",
+    baslik: "Engelli Bireylerin Eğitimde ve Çalışma Hayatında Karşılaştığı Sorunlar Gündemde",
+    ozet: "Engelli bireylerin toplumsal yaşama katılımında erişilebilirlik, iletişim ve eğitim olanakları önemli bir yer tutuyor. Anadolu Üniversitesi Engelliler Enstitüsü'nde görev yapan Mine Yavuzsoy sorunları anlattı.",
+    yazar: "İlknur Cerrahoğlu",
+    tarih: "6 Kasım 2026",
+    sure: "4 dk okuma",
+    gorsel: "images/engelli hanım.jpeg",
+    gorselAciklama: "",
+    metin: [
+      "ENGELLİ BİREYLERİN TOPLUMSAL YAŞAMA KATILIMINDA ERİŞİLEBİLİRLİK, İLETİŞİM VE EĞİTİM OLANAKLARI ÖNEMLİ BİR YER TUTUYOR. ANADOLU ÜNİVERSİTESİ ENGELLİLER ENSTİTÜSÜ’NDE GÖREV YAPAN MİNE YAVUZSOY, TOPLU TAŞIMADA YAŞADIĞI İLETİŞİM GÜÇLÜKLERİNİ ANLATARAK ENGELLİ İSTİHDAMININ ARTIRILMASI VE EĞİTİM OLANAKLARININ GELİŞTİRİLMESİ GEREKTİĞİNİ SÖYLEDİ",
+      "Eskişehir’de engelli bireylerin günlük yaşamda karşılaştıkları sorunlar, toplumsal yaşama eşit katılım ve fırsat eşitliği açısından önem taşıyor. Ulaşım, iletişim, eğitim ve istihdam alanlarında yaşanan güçlükler, engelli bireylerin bağımsız yaşamlarını ve toplumsal hayata katılımlarını etkileyebiliyor. Erişilebilir ortamların oluşturulması, iletişim engellerinin azaltılması ve eğitim ile çalışma hayatında eşit fırsatların sağlanması, bu sorunların giderilmesinde önemli rol oynuyor.",
+      "Anadolu Üniversitesi Engelliler Enstitüsü okuma salonunda memur olarak görev yapan ve Anadolu Üniversiteden mezun olan Mine Yavuzsoy günlük yaşamda ve çalışma hayatında karşılaştığı sorunları anlattı. Özellikle toplu taşımada iletişim kurarken zorlandığını belirten Yavuzsoy, engelli bireylerin istihdam olanaklarının artırılması ve eğitim sisteminin geliştirilmesi gerektiğini ifade etti.",
+      "## TOPLU TAŞIMADA İLETİŞİM GÜÇLÜĞÜ",
+      "Günlük yaşamında iletişim kurmak için farklı yöntemlerden yararlandığını belirten Mine Yavuzsoy, dolmuş ve minibüs şoförleriyle iletişim kurarken zorlandığını söyledi. Araçtan inmek istediğinde sesini duyurmakta güçlük çektiğini ifade eden Yavuzsoy, işaret diliyle iletişim kurabildiğini, gerektiğinde yazarak anlaştığını ve bazı durumlarda dudak okuma yöntemini kullandığını belirtti.",
+      "Arkadaşlık ilişkilerinin iyi olduğunu dile getiren Yavuzsoy, iletişimde farklı yöntemlerden yararlanmanın günlük yaşamda önemli olduğunu söyledi.",
+      "## ENGELLİ İSTİHDAMI ARTIRILMALIa",
+      "Anadolu Üniversitesi Engelliler Enstitüsü okuma salonunda çalışan Yavuzsoy, iş hayatında engelli bireylere eşit davranılması gerektiğini vurguladı. Engelli çalışanların baskıya maruz kalmaması gerektiğini belirten Yavuzsoy, istihdam olanaklarının artırılmasını istedi.",
+      "Görev yaptığı okuma salonunda öğrencilere yardımcı olduğunu belirten Yavuzsoy, çalışma ortamında bazı personel eksiklikleri olduğunu da aktardı. Yavuzsoy, işlerin sağlıklı yürütülebilmesi için yeterli personel bulunmasının önemine dikkat çekti.",
+      "## EĞİTİM OLANAKLARI GELİŞTİRİLMELİ",
+      "Eğitimin engelli bireylerin yaşamında önemli bir yere sahip olduğunu belirten Yavuzsoy, eğitim olanaklarının geliştirilmesi gerektiğini söyledi. Çocukların yanı sıra ailelerin ve öğretmenlerin de bu konuda bilinçlendirilmesinin önemini vurgulayan Yavuzsoy, eğitim sürecinin daha kapsamlı hale getirilmesi gerektiğini ifade etti.",
+      "Türkiye’de engelli bireylere yönelik eğitim kurumlarının artırılması gerektiğini savunan Yavuzsoy, özellikle işitme engelli bireylerin eğitimine yönelik olanakların geliştirilmesini istedi. Kapatılan sağır okullarına ilişkin değerlendirmelerde de bulunan Yavuzsoy, bu alandaki eğitim kurumlarının yeniden açılması gerektiğini dile getirdi.",
+      "Yavuzsoy, engelli bireylerin toplumsal yaşama daha etkin katılabilmesi için iletişim engellerinin azaltılması, eğitim fırsatlarının geliştirilmesi ve çalışma hayatında eşitliğin sağlanması gerektiğini belirtti."
+    ]
+  },
 ];
