@@ -814,14 +814,75 @@ a:hover { text-decoration: underline; }
 }
 
 /* ===== TELEFON / DAR EKRAN ===== */
-@media (max-width: 900px) {
-  .topbar { grid-template-columns: 1fr; gap: 12px; padding: 16px 20px 0; }
-  .nav { justify-content: flex-start; flex-wrap: wrap; gap: 6px 20px; }
-  .search { width: 100%; justify-self: stretch; }
+@media (max-width: 900px) { @media (max-width: 900px) {
+  /* ... mevcut diğer mobil kodların ... */
 
-  /* MANŞET: yüksekliği serbest bırak, kartlarla arasına mesafe koy */
-  .statement { margin: 20px 20px 24px; font-size: 10vw; min-height: auto; }
+  .statement-wrapper {
+    margin: 20px 20px 24px; /* Telefonda 300px yerine 20px boşluk */
+    min-height: 160px;
+  }
 
+  .statement {
+    padding: 16px;
+    font-size: 7.5vw !important; /* Telefona özel okunaklı boyut */
+    line-height: 1.2;
+  }
+}
+  /* ... mevcut diğer mobil kodların ... */
+
+ /* ===== BÜYÜK MANŞET ALANI WRAPPER (Masaüstü Eski Düzen) ===== */
+.statement-wrapper {
+  position: relative;
+  margin: 28px 300px 0; /* Masaüstündeki orijinal sağ-sol 300px boşluk */
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #000;
+}
+
+.statement-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  transition: background-image 0.4s ease, opacity 0.3s ease;
+}
+
+.statement-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.statement {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  padding: 20px 24px;
+  width: 100%;
+  text-align: left;
+  color: #ffffff;
+  font-family: var(--font-impact);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 3.4vw; /* Masaüstü orijinal ölçek */
+  line-height: 1.15;
+  letter-spacing: 0;
+  transition: opacity 0.3s ease;
+}
+
+.statement a {
+  color: #ffffff !important;
+}
+.statement a:hover {
+  text-decoration: none;
+}
   /* HABER KARTLARI */
   .more { margin: 0 0 0 20px; padding-right: 20px; }
   .item { flex-basis: 240px; }
